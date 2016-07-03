@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="groups">
+        <item>我的好友</item>
+        <item>陌生人</item>
+        <item>黑名单</item>
+        <item>好友请求列表</item>
+    </string-array>
+
+
+</resources>

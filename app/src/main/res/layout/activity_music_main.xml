@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/mm_llt_top">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/mm_touxiang"
+            />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/mm_touxiang">
+            <TextView
+                android:layout_alignParentTop="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mm_name"
+                style="@style/usertext"
+                />
+            <ImageView
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/mm_delete"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mm_name"
+                style="@style/usertext"
+                android:id="@+id/mm_sign"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mm_geming"
+                android:layout_below="@id/mm_sign"
+                />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mm_geming"
+                >
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:id="@+id/mm_play"
+                    />
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:id="@+id/mm_pause"
+                    android:layout_toRightOf="@+id/mm_play"
+                    android:layout_marginLeft="10dp"
+                     />
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:id="@+id/mm_stop"
+                    android:layout_toRightOf="@id/mm_pause"
+                    android:layout_marginLeft="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mm_zan_number"
+                    android:layout_toRightOf="@id/mm_stop"
+                    android:layout_marginLeft="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mm_flower_number"
+                    android:layout_toRightOf="@id/mm_zan_number"
+                    android:layout_marginLeft="10dp"
+                    />
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:id="@+id/mm_add"
+                    android:layout_toRightOf="@id/mm_flower_number"
+                    android:layout_marginLeft="10dp"
+                    />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/mm_llt_bottom"
+        >
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:id="@+id/mm_flower" />
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_weight="1"
+            android:id="@+id/mm_like" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:id="@+id/mm_text_comment"
+            android:hint="参与评论"
+            />
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_weight="1"
+            android:id="@+id/mm_comment" />
+
+    </LinearLayout>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mm_llt_top"
+        android:max="100"
+        android:id="@+id/music_seekbar"
+    />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/list_music_main"
+        android:fastScrollEnabled="true"
+        android:layout_below="@+id/music_seekbar"
+        android:layout_above="@+id/mm_llt_bottom"></ListView>
+
+
+
+
+</RelativeLayout>

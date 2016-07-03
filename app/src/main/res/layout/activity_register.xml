@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+     android:layout_width="match_parent"
+    android:background="@drawable/login_back"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入你需要注册的用户名"
+        android:layout_marginTop="130dp"
+        android:id="@+id/rgs_name"
+        android:textColor="@color/geek_green"
+        android:textColorHint="@color/geek_green"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_marginTop="20dp"
+        android:hint="请输入你的密码"
+        android:textColor="@color/geek_green"
+        android:textColorHint="@color/geek_green"
+        android:id="@+id/rgs_password"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_marginTop="20dp"
+        android:hint="请重新输入密码"
+        android:textColor="@color/geek_green"
+        android:textColorHint="@color/geek_green"
+        android:id="@+id/rgs_repass"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:id="@+id/register"
+            android:text="注册"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/cancle"
+            android:text="取消"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

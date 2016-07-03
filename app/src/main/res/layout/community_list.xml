@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <LinearLayout
+        android:gravity="top"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llt0_c">
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/touxiang_1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_geming"
+            style="@style/usertext"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llt0_c"
+        android:id="@+id/llt0_c2">
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="赞:"
+            android:id="@+id/zan_char"/>
+        <TextView
+
+            android:layout_toRightOf="@+id/zan_char"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_zan"></TextView>
+        <TextView
+            android:layout_toRightOf="@+id/text_zan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          评论:"
+            android:id="@+id/pl_char"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/pl_char"
+            android:id="@+id/text_pl"/>
+        <TextView
+            android:layout_toRightOf="@+id/text_pl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          鲜花:"
+            android:id="@+id/flower_char"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_flower"
+            android:layout_toRightOf="@+id/flower_char"
+            />
+    </RelativeLayout>
+</RelativeLayout>

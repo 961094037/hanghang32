@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout style="@style/wrap_layout"
+        android:layout_centerHorizontal="true"
+        >
+        <LinearLayout style="@style/single_layout"
+            android:id="@+id/llt3_t_1">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></ImageView>
+            <TextView style="@style/usertext" android:text="  从摄像头获取"/>
+            <ImageView style="@style/img_arrow"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout style="@style/wrap_layout"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout4">
+        <LinearLayout style="@style/single_layout"
+            android:id="@+id/llt3_t_2">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></ImageView>
+            <TextView style="@style/usertext" android:text="  从图库中选择"/>
+            <ImageView style="@style/img_arrow"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@drawable/login_back"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginTop="160dp"
+        android:ems="10"
+        android:id="@+id/login_username"
+        android:textColor="@color/geek_green"
+        android:textColorHint="@color/geek_green"
+        android:hint="请输入8—12位帐号"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="请输入密码"
+        android:textColor="@color/geek_green"
+        android:textColorHint="@color/geek_green"
+        android:id="@+id/login_password" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="登入"
+            android:id="@+id/btn_login"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册"
+            android:id="@+id/btn_register"
+            android:layout_marginLeft="20dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="退出"
+            android:id="@+id/btn_leave"/>
+
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
