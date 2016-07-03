@@ -378,13 +378,23 @@ public class Music_main extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onDestroy(){
         super.onDestroy();
-        User_Id.setThread(false);
         if(mediaPlayer!=null)
         {
             mediaPlayer.stop();
             mediaPlayer.release();
         }
     }
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        User_Id.setThread(false);
+
+        return super.onKeyDown(keyCode, event);
+
+    }
+
     public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3){
         Toast.makeText(Music_main.this,"papapa",Toast.LENGTH_LONG).show();
 

@@ -141,6 +141,9 @@
         <TextView style="@style/usertext" android:text="  联系我们"/>
             <ImageView style="@style/img_arrow"/>
             </LinearLayout>
+
+        <View style="@style/bg_line"/>
+
             <LinearLayout style="@style/bottom_layout"
                 android:id="@+id/llt3_5">
                 <ImageView
