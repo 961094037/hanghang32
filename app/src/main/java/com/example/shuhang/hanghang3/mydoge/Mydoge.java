@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.example.shuhang.hanghang3.R;
 import com.example.shuhang.hanghang3.table.PhpUrl;
-import com.example.shuhang.hanghang3.table.User_Id;
+import com.example.shuhang.hanghang3.table.Var_Id;
 import com.example.shuhang.hanghang3.utils.HttpUtils;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -69,7 +69,7 @@ public class Mydoge extends Fragment implements View.OnClickListener{
     }
     private void getupdata(){
         RequestParams params = new RequestParams();
-        params.add("user_id", User_Id.getId());
+        params.add("user_id", Var_Id.getId());
         client.post(PhpUrl.getUPSPACE(),params,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
@@ -129,7 +129,7 @@ public class Mydoge extends Fragment implements View.OnClickListener{
                 break;
             case  R.id.doge_mai:
                 RequestParams params = new RequestParams();
-                params.add("user_id", User_Id.getId());
+                params.add("user_id", Var_Id.getId());
                 client.post(PhpUrl.getGetFlower(), params, new AsyncHttpResponseHandler() {
                     @Override
                     public void onSuccess(int i, Header[] headers, byte[] bytes) {

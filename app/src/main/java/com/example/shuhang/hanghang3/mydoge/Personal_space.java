@@ -16,9 +16,8 @@ import com.example.shuhang.hanghang3.adapter.SpaceAdapter;
 
 import com.example.shuhang.hanghang3.community.Music_main;
 import com.example.shuhang.hanghang3.table.PhpUrl;
-import com.example.shuhang.hanghang3.table.Rank_list;
 import com.example.shuhang.hanghang3.table.Space_list;
-import com.example.shuhang.hanghang3.table.User_Id;
+import com.example.shuhang.hanghang3.table.Var_Id;
 import com.example.shuhang.hanghang3.utils.HttpUtils;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -28,7 +27,6 @@ import org.apache.http.Header;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,7 +83,7 @@ public class Personal_space extends AppCompatActivity implements AdapterView.OnI
         Intent intent=getIntent();
         check=intent.getStringExtra("user_id");
         if(check.equals("self")){
-            user_id= User_Id.getId();
+            user_id= Var_Id.getId();
         }
         else
         {

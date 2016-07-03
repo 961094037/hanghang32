@@ -12,7 +12,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -24,7 +23,7 @@ import com.example.shuhang.hanghang3.R;
 import com.example.shuhang.hanghang3.adapter.CommtAdapter;
 import com.example.shuhang.hanghang3.table.Comment_list;
 import com.example.shuhang.hanghang3.table.IconUrl;
-import com.example.shuhang.hanghang3.table.User_Id;
+import com.example.shuhang.hanghang3.table.Var_Id;
 import com.example.shuhang.hanghang3.table.PhpUrl;
 import com.example.shuhang.hanghang3.utils.HttpUtils;
 import com.loopj.android.http.AsyncHttpClient;
@@ -126,7 +125,7 @@ public class Music_main extends AppCompatActivity implements View.OnClickListene
         flower_number.setText("花:" + String.valueOf(mm_flower));
     }
     private void init(){
-        User_Id.setThread(true);
+        Var_Id.setThread(true);
         music_seekbar=(SeekBar)findViewById(R.id.music_seekbar);
         music_seekbar.setOnSeekBarChangeListener(this);
         play=(ImageView)findViewById(R.id.mm_play);
@@ -231,7 +230,7 @@ public class Music_main extends AppCompatActivity implements View.OnClickListene
                 break;
             case R.id.mm_like:
                    RequestParams params = new RequestParams();
-                   params.add("user_id", User_Id.getId());
+                   params.add("user_id", Var_Id.getId());
                    params.add("music_id", music_id);
                 client.post(PhpUrl.getZAN(), params, new JsonHttpResponseHandler() {
                     @Override
@@ -257,7 +256,7 @@ public class Music_main extends AppCompatActivity implements View.OnClickListene
             case R.id.mm_flower:
                 RequestParams params3 = new RequestParams();
                 params3.add("music_id", music_id);
-                params3.add("user_id", User_Id.getId());
+                params3.add("user_id", Var_Id.getId());
                 client.post(PhpUrl.getFLOWER(), params3, new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
@@ -288,7 +287,7 @@ public class Music_main extends AppCompatActivity implements View.OnClickListene
                 String comment = etComment.getText().toString();
                 RequestParams params2 = new RequestParams();
                 params2.add("comment", comment);
-                params2.add("user_id", User_Id.getId());
+                params2.add("user_id", Var_Id.getId());
                 params2.add("music_id", music_id);
                 client.post(PhpUrl.getSentComment(), params2, new AsyncHttpResponseHandler() {
                     @Override
@@ -307,7 +306,7 @@ public class Music_main extends AppCompatActivity implements View.OnClickListene
                 break;
             case R.id.mm_add:
                 RequestParams params4 = new RequestParams();
-                params4.add("user_id", User_Id.getId());
+                params4.add("user_id", Var_Id.getId());
                 params4.add("music_id", music_id);
                 client.post(PhpUrl.getADD(), params4, new JsonHttpResponseHandler() {
                     @Override
@@ -349,7 +348,7 @@ public class Music_main extends AppCompatActivity implements View.OnClickListene
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 RequestParams params5 = new RequestParams();
-                                params5.add("user_id", User_Id.getId());
+                                params5.add("user_id", Var_Id.getId());
                                 params5.add("music_id", music_id);
                                 client.post(PhpUrl.getDELETE(), params5, new JsonHttpResponseHandler() {
                                     @Override
@@ -389,7 +388,7 @@ public class Music_main extends AppCompatActivity implements View.OnClickListene
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
-        User_Id.setThread(false);
+        Var_Id.setThread(false);
 
         return super.onKeyDown(keyCode, event);
 
@@ -437,7 +436,7 @@ public class Music_main extends AppCompatActivity implements View.OnClickListene
             milliseconds = i;
         }
         public void run() {
-            while(User_Id.isThread()){
+            while(Var_Id.isThread()){
                 try {
                     sleep(milliseconds);
                 } catch (InterruptedException e) {

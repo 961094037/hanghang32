@@ -21,7 +21,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.example.shuhang.hanghang3.table.User_Id;
+import com.example.shuhang.hanghang3.table.Var_Id;
 import com.example.shuhang.hanghang3.table.PhpUrl;
 import com.loopj.android.http.*;
 import org.apache.http.Header;
@@ -171,7 +171,7 @@ public class Head extends AppCompatActivity implements View.OnClickListener{
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
         params.add("img", img);
-        params.add("user_id", User_Id.getId());
+        params.add("user_id", Var_Id.getId());
         client.post(PhpUrl.getUploadHead(), params, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int i, Header[] headers, byte[] bytes) {

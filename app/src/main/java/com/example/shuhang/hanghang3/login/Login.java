@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.example.shuhang.hanghang3.R;
 import com.example.shuhang.hanghang3.fragment_main.FragmentMain;
-import com.example.shuhang.hanghang3.table.User_Id;
+import com.example.shuhang.hanghang3.table.Var_Id;
 import com.example.shuhang.hanghang3.table.PhpUrl;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -67,7 +67,7 @@ public class Login extends AppCompatActivity {
                             String user_name = username.getText().toString();
                             String pass_word = password.getText().toString();
                             if(pass_word.equals(obj.getString("password"))) {
-                                User_Id.setId(obj.getString("user_id"));
+                                Var_Id.setId(obj.getString("user_id"));
                                 Toast.makeText(Login.this,"登陆成功", Toast.LENGTH_LONG).show();
 
                                 SharedPreferences userDetails = getSharedPreferences("userinfo", Context.MODE_PRIVATE);

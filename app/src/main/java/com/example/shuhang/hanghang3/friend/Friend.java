@@ -1,34 +1,24 @@
 package com.example.shuhang.hanghang3.friend;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.DialogPreference;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ExpandableListView;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.shuhang.hanghang3.adapter.FriendExAdapter;
-import com.example.shuhang.hanghang3.mydoge.Mydoge;
 import com.example.shuhang.hanghang3.R;
 import com.example.shuhang.hanghang3.mydoge.Personal_space;
-import com.example.shuhang.hanghang3.rank.Rank;
-import com.example.shuhang.hanghang3.community.Community;
 import com.example.shuhang.hanghang3.table.Item;
 import com.example.shuhang.hanghang3.table.PhpUrl;
-import com.example.shuhang.hanghang3.table.User_Id;
+import com.example.shuhang.hanghang3.table.Var_Id;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -65,7 +55,7 @@ public class Friend extends Fragment implements  View.OnClickListener,Expandable
 
     private void ifrequest(){
         RequestParams params = new RequestParams();
-        params.add("user_id", User_Id.getId());
+        params.add("user_id", Var_Id.getId());
         client.post(PhpUrl.getFriendRequest(), params, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
@@ -91,14 +81,14 @@ public class Friend extends Fragment implements  View.OnClickListener,Expandable
     }
     private void  getdata() {
         RequestParams params = new RequestParams();
-        params.add("user_id", User_Id.getId());
+        params.add("user_id", Var_Id.getId());
         client.post(PhpUrl.getFRIEND(), params, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                 super.onSuccess(statusCode, headers, response);
                 if (statusCode == 200) {
                     mData.clear();
-                    User_Id.setLength(0);
+                    Var_Id.setLength(0);
                     List<Item> list = new ArrayList<Item>();
                     List<Item> list2 = new ArrayList<Item>();
                     for (int i = 0; i < response.length(); i++) {
@@ -111,18 +101,18 @@ public class Friend extends Fragment implements  View.OnClickListener,Expandable
                             if(user_name.equals("961094037hang"))
                             {
                                 mData.add(list);
-                                User_Id.setLength(0);
+                                Var_Id.setLength(0);
                             }
                             else
                             {
                                 list.add(new Item(tu_url, user_name, user_sign, friend_id));
-                                User_Id.setLength(1);
+                                Var_Id.setLength(1);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
-                    if(User_Id.getLength()==1)
+                    if(Var_Id.getLength()==1)
                     {
                         mData.add(list);
                     }
@@ -136,13 +126,13 @@ public class Friend extends Fragment implements  View.OnClickListener,Expandable
     }
     private void  getrequestdata(){
         RequestParams params = new RequestParams();
-        params.add("user_id", User_Id.getId());
+        params.add("user_id", Var_Id.getId());
         client.post(PhpUrl.getREQUESTDATA(), params, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                 super.onSuccess(statusCode, headers, response);
                 if (statusCode == 200) {
-                    User_Id.setLength2(0);
+                    Var_Id.setLength2(0);
                     List<Item> list = new ArrayList<Item>();
                     for (int i = 0; i < response.length(); i++) {
                         try {
@@ -154,17 +144,17 @@ public class Friend extends Fragment implements  View.OnClickListener,Expandable
                             if(user_name.equals("961094037hang"))
                             {
                                  mData.add(list);
-                                User_Id.setLength2(0);
+                                Var_Id.setLength2(0);
                             }
                             else{
                                 list.add(new Item(tu_url, user_name, user_sign, friend_id));
-                                User_Id.setLength2(1);
+                                Var_Id.setLength2(1);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
-                    if(User_Id.getLength2()==1)
+                    if(Var_Id.getLength2()==1)
                     {
                         mData.add(list);
                     }
@@ -210,15 +200,15 @@ public class Friend extends Fragment implements  View.OnClickListener,Expandable
             default:
                 break;
         }
-        User_Id.setFriend_id(mData.get(groupId).get(childId).getFriend_id());
+        Var_Id.setFriend_id(mData.get(groupId).get(childId).getFriend_id());
         new AlertDialog.Builder(getActivity())
                 .setMessage("你要接收或拒绝好友请求或者删除好友吗")
                 .setNegativeButton("删除或拒绝", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         RequestParams params = new RequestParams();
-                        params.add("user_id", User_Id.getId());
-                        params.add("friend_id", User_Id.getFriend_id());
+                        params.add("user_id", Var_Id.getId());
+                        params.add("friend_id", Var_Id.getFriend_id());
                         client.post(PhpUrl.getRemoveRefuse(), params, new AsyncHttpResponseHandler() {
                             @Override
                             public void onSuccess(int i, Header[] headers, byte[] bytes) {
@@ -241,8 +231,8 @@ public class Friend extends Fragment implements  View.OnClickListener,Expandable
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 RequestParams params = new RequestParams();
-                                params.add("user_id", User_Id.getId());
-                                params.add("friend_id", User_Id.getFriend_id());
+                                params.add("user_id", Var_Id.getId());
+                                params.add("friend_id", Var_Id.getFriend_id());
                                 client.post(PhpUrl.getACCEPT(), params, new JsonHttpResponseHandler() {
                                     @Override
                                     public void onSuccess(int statusCode, Header[] headers, JSONArray response) {

@@ -1,6 +1,5 @@
 package com.example.shuhang.hanghang3.mydoge;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,7 +9,7 @@ import android.widget.Toast;
 
 import com.example.shuhang.hanghang3.R;
 import com.example.shuhang.hanghang3.table.PhpUrl;
-import com.example.shuhang.hanghang3.table.User_Id;
+import com.example.shuhang.hanghang3.table.Var_Id;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -38,7 +37,7 @@ public class Signature extends AppCompatActivity implements View.OnClickListener
     }
     private void getsign(){
         RequestParams params = new RequestParams();
-        params.add("user_id", User_Id.getId());
+        params.add("user_id", Var_Id.getId());
         client.post(PhpUrl.getUPSPACE(), params, new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
@@ -63,7 +62,7 @@ public class Signature extends AppCompatActivity implements View.OnClickListener
             case R.id.gexin_bao:
                 RequestParams params = new RequestParams();
                 params.add("user_sign",user_sign.getText().toString());
-                params.add("user_id", User_Id.getId());
+                params.add("user_id", Var_Id.getId());
                 client.post(PhpUrl.getUPSIGN(), params, new AsyncHttpResponseHandler() {
                     @Override
                     public void onSuccess(int i, Header[] headers, byte[] bytes) {

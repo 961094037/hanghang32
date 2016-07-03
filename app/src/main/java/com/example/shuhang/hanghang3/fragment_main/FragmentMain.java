@@ -19,7 +19,7 @@ import com.example.shuhang.hanghang3.community.Community;
 import com.example.shuhang.hanghang3.friend.Friend;
 import com.example.shuhang.hanghang3.mydoge.Mydoge;
 import com.example.shuhang.hanghang3.rank.Rank;
-import com.example.shuhang.hanghang3.table.User_Id;
+import com.example.shuhang.hanghang3.table.Var_Id;
 import com.example.shuhang.hanghang3.table.PhpUrl;
 import com.example.shuhang.hanghang3.utils.FileUtils;
 import com.loopj.android.http.AsyncHttpClient;
@@ -165,7 +165,7 @@ public class FragmentMain extends AppCompatActivity implements
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
         params.put("uploadfile", new File(path));
-        params.add("user_id", User_Id.getId());
+        params.add("user_id", Var_Id.getId());
         client.post(PhpUrl.getUploadMusic(),params,new AsyncHttpResponseHandler(){
             @Override
             public void onSuccess(int i, Header[] headers, byte[] bytes) {
