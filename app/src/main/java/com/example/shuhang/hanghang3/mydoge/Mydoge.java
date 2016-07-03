@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.shuhang.hanghang3.R;
+import com.example.shuhang.hanghang3.fragment_main.FragmentMain;
+import com.example.shuhang.hanghang3.login.Login;
 import com.example.shuhang.hanghang3.table.PhpUrl;
 import com.example.shuhang.hanghang3.table.Var_Id;
 import com.example.shuhang.hanghang3.utils.HttpUtils;
@@ -43,7 +45,9 @@ public class Mydoge extends Fragment implements View.OnClickListener{
     private TextView doge_leave_flower;
     private TextView doge_user_flower;
     private TextView doge_user_zan;
+    private TextView doge_login;
     private ImageView imageView;
+
     AsyncHttpClient client = new AsyncHttpClient();
 
     @Nullable
@@ -62,6 +66,7 @@ public class Mydoge extends Fragment implements View.OnClickListener{
         doge_leave_flower=(TextView)view.findViewById(R.id.doge_leaveflower);
         doge_user_zan=(TextView)view.findViewById(R.id.doge_zan);
         doge_user_flower=(TextView)view.findViewById(R.id.doge_flower);
+        doge_login=(TextView)view.findViewById(R.id.doge_login);
         imageView=(ImageView)view.findViewById(R.id.doge_imageView);
         initView();
         getupdata();
@@ -96,6 +101,7 @@ public class Mydoge extends Fragment implements View.OnClickListener{
         llt4.setOnClickListener(this);
         llt5.setOnClickListener(this);
         buy.setOnClickListener(this);
+        doge_login.setOnClickListener(this);
     }
 
     @Override
@@ -141,6 +147,12 @@ public class Mydoge extends Fragment implements View.OnClickListener{
                     public void onFailure(int i, Header[] headers, byte[] bytes, Throwable throwable) {
                     }
                 });
+                break;
+            case R.id.doge_login:
+                Var_Id.setStop_login(true);
+                Intent intent6 = new Intent(getActivity(), Login.class);
+                startActivity(intent6);
+                getActivity().finish();
                 break;
             default:
                 break;

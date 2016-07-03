@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -383,13 +384,10 @@ public class Music_main extends AppCompatActivity implements View.OnClickListene
             mediaPlayer.release();
         }
     }
-
-
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
         Var_Id.setThread(false);
-
         return super.onKeyDown(keyCode, event);
 
     }

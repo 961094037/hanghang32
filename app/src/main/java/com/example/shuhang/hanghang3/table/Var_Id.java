@@ -5,10 +5,15 @@ package com.example.shuhang.hanghang3.table;
  */
 public class Var_Id {
     private static  String id;
-    private static  int length;
-    private static  int length2;
     private static  String friend_id;
     private static  String music_id;
+
+
+    private static  int length;
+    private static  int length2;
+
+
+    private static  boolean  stop_login=false;
     private static  boolean  thread=true;
 
     public static String getId() {
@@ -57,5 +62,13 @@ public class Var_Id {
 
     public static void setMusic_id(String music_id) {
         Var_Id.music_id = music_id;
+    }
+
+    public static boolean isStop_login() {
+        return stop_login;
+    }
+
+    public static void setStop_login(boolean stop_login) {
+        Var_Id.stop_login = stop_login;
     }
 }

@@ -26,6 +26,33 @@
         android:textColorHint="@color/geek_green"
         android:id="@+id/login_password" />
     <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+
+     <CheckBox
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/remember"
+         android:text="记住密码"
+         android:layout_marginLeft="40dp"
+         android:textSize="20dp"
+         android:textColor="@color/orange"
+         />
+     <CheckBox
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/automatic"
+         android:layout_marginLeft="30dp"
+         android:textSize="20dp"
+         android:textColor="@color/orange"
+         android:text="自动登陆"/>
+
+
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
