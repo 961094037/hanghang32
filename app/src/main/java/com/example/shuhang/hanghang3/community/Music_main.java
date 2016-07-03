@@ -396,7 +396,7 @@ public class Music_main extends AppCompatActivity implements View.OnClickListene
     }
 
     public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3){
-        Toast.makeText(Music_main.this,"papapa",Toast.LENGTH_LONG).show();
+        Toast.makeText(Music_main.this,"44papa",Toast.LENGTH_LONG).show();
 
     }
 
