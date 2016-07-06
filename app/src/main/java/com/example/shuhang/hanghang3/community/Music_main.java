@@ -359,7 +359,8 @@ public class Music_main extends AppCompatActivity implements View.OnClickListene
                                             JSONObject obj = response.getJSONObject(0);
                                             if (obj.getString("check").equals("ok")) {
                                                 Toast.makeText(Music_main.this, "删除成功!", Toast.LENGTH_SHORT).show();
-                                                finish();
+                                                Var_Id.setThread(false);
+                                                onBackPressed();
                                             } else {
                                                 Toast.makeText(Music_main.this, "这不是你的歌曲!", Toast.LENGTH_SHORT).show();
                                             }
@@ -389,7 +390,6 @@ public class Music_main extends AppCompatActivity implements View.OnClickListene
 
         Var_Id.setThread(false);
         return super.onKeyDown(keyCode, event);
-
     }
 
     public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3){
