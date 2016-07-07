@@ -45,6 +45,7 @@ public class Head extends AppCompatActivity implements View.OnClickListener{
         llt2.setOnClickListener(this);
         llt1=(LinearLayout)findViewById(R.id.llt3_t_1);
         llt1.setOnClickListener(this);
+
     }
 
     @Override

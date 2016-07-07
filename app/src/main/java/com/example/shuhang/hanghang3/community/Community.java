@@ -138,7 +138,7 @@ public class Community extends Fragment implements AdapterView.OnItemClickListen
     }
 
     @Override
-    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+    public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
         Var_Id.setMusic_id(community.get(position).getMusic_id());
 
@@ -163,6 +163,8 @@ public class Community extends Fragment implements AdapterView.OnItemClickListen
                                     JSONObject obj = response.getJSONObject(0);
                                     if (obj.getString("check").equals("ok")) {
                                         Toast.makeText(getActivity(), "删除成功!", Toast.LENGTH_SHORT).show();
+                                        community.remove(position);
+                                        adapter.notifyDataSetChanged();
                                     } else {
                                         Toast.makeText(getActivity(), "这不是你的歌曲!", Toast.LENGTH_SHORT).show();
                                     }
